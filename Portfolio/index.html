@@ -22,9 +22,9 @@
                 <li><a href="static/MamidiMahesh_Resume.pdf" download class="resume-button" target="_blank">
                 <i class="fas fa-download"></i>  Resume
                 </a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+                <li></li>
+                <li></li>
+                <li></li><li></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -34,10 +34,11 @@
             </ul>
         </div>
     </nav>
-
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Mamidi Mahesh</h1>
+            <h1>Welcome To My Portfolio!</h1>
+            <h2>Hi I'm Mamidi Mahesh</h2>
+            
             <p>Creative Aspiring Data Scientist | Python • ML • Visualization | Turning Data into Stories | Fresher</p>
             <p>Aspiring Data Scientist</p>
             <a href="#projects" class="cta-button">View My Work</a>
@@ -57,14 +58,16 @@
                     As a creative thinker and technical learner, I love blending logic with innovation — whether it's through clean code, insightful dashboards, or real-world data projects.
                 </p>
             </div>
-            <div class="about-image">
-                <div class="profile-card">
-                    <div class="profile-pic">👨‍💻</div>
-                    <h3>Creative Developer</h3>
-                    <p>Building the future, one line of code at a time</p>
-                </div>
-            </div>
-        </div>
+            
+
+                    <div class="profile-pic">
+                        <div class="profile-container">
+                            <div class="profile-pic">
+                                <img src="static/Profile pic.png" alt="profile picture" />
+                            </div>
+                    
+                        </div>
+                    </div>
     </section>
    
     <!--Skills Section -->
@@ -135,41 +138,47 @@
         </div>
     </section>
     <!-- Certificates Section -->
-      <section id="certificate" class="section">
-        <h2>Certificates</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">🤖</div>
-                <h3>Python</h3>
-                <p>Issued by HackerRank , Credential ID: 1D16E296DFA </p>
-                <p>Issued Date:June 2025</p>
-                <a href="static/Python.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate</a>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🛠️</div>
-                <h3>Programming in Java</h3>
-                <p>Issued by NPTEL, IIT Kharagpur , Elite Certificate</p>
-                <p>Issued Date:April 2023</p>
-                <a href="static/Java.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate</a>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">📈</div>
-                <h3>Advanced Excel</h3>
-                <p>Issued by I.T. Vedant , Credential ID: ITV68810246b65a1</p>
-                <p>Issued Date:July 2025</p>
-                <a href="static/Excel.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate</a>
-            </div>
-            
-            <div class="skill-card">
-                <div class="skill-icon">🗄️</div>
-                <h3>SQL </h3>
-                <p>Issued by HackerRank , Credential ID: 1D16E296DFA</p>
-                <p>Issued Date:July 2025</p>
-                <a href="static/SQL.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate</a>
-            </div>
+      <!-- Certificates Section -->
+<section id="certificate" class="section">
+  <h2>Certificates</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>Python</h3>
+      <p>Issued by HackerRank, Credential ID: 1D16E296DFA</p>
+      <p>Issued Date: June 2025</p>
+      <button class="certificate-link" data-img="static/Python.jpg">View Certificate</button>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🛠️</div>
+      <h3>Programming in Java</h3>
+      <p>Issued by NPTEL,IIT Kharagpur,Elite Certificate NPTEL23CS49S63753579</p>
+      <p>Issued Date: April 2023</p>
+      <button class="certificate-link" data-img="static/Java.jpg">View Certificate</button>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📈</div>
+      <h3>Advanced Excel</h3>
+      <p>Issued by I.T. Vedant, Credential ID: ITV68810246b65a1</p>
+      <p>Issued Date: July 2025</p>
+      <button class="certificate-link" data-img="static/Excel.jpg">View Certificate</button>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <h3>SQL</h3>
+      <p>Issued by HackerRank, Credential ID: 1D16E296DFA</p>
+      <p>Issued Date: July 2025</p>
+      <button class="certificate-link" data-img="static/SQL.jpg">View Certificate</button>
+    </div>
+  </div>
+</section>
 
-    </section>
-    
+<!-- Modal Structure -->
+<div id="certModal" class="modal">
+  <span class="close-btn">❌</span>
+  <img class="modal-content" id="modalImage" alt="Certificate Image" />
+</div>
+
     <!--Contact Section -->
     <section id="contact" class="section">
         <h2>Get In Touch</h2>
@@ -278,6 +287,38 @@
             el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
             observer.observe(el);
         });
+    </script>
+    <script>
+        // Get modal elements
+const modal = document.getElementById('certModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.querySelector('.close-btn');
+
+// Get all "View Certificate" buttons
+const certLinks = document.querySelectorAll('.certificate-link');
+
+certLinks.forEach(button => {
+  button.addEventListener('click', () => {
+    const imgSrc = button.getAttribute('data-img');
+    modalImg.src = imgSrc;
+    modal.style.display = 'block';
+  });
+});
+
+// Close modal on clicking close button
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+  modalImg.src = ''; // Clear image src for cleanup
+});
+
+// Also close modal if user clicks outside the image
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  }
+});
+
     </script>
 </body>
 </html>
