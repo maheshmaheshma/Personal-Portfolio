@@ -115,6 +115,7 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+        
 
         /* Hero Section */
         .hero {
@@ -129,6 +130,7 @@
         .hero-content {
             max-width: 800px;
             animation: slideUp 1s ease-out;
+            
         }
 
         @keyframes slideUp {
@@ -136,7 +138,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero h1 {
+        .hero h1,h2 {
             font-size: 4rem;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #c473e1, #4ecdc4, #45b7d1);
@@ -219,6 +221,7 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #b0b0b0;
+            text-align: justify;
         }
 
         .about-image {
@@ -441,8 +444,119 @@
           background-color: #b0b0b0;
           color: #fff;
         }
+        /* Personal Details Section */
+        .profile-container {
+        display: flex;
+        flex-direction: row; /* Row by default: image left, text right */
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+        }
+
+        /* Profile picture on the left */
+        .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+        }
+
+        /* Ensure the image fills the box */
+        .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+        }
+
+        /* Info on the right */
+        .profile-info {
+         flex: 1;
+         min-width: 200px;
+        }
+
+        .profile-info h3 {
+        margin: 0 0 10px;
+        font-size: 1.5rem;
+        color: #ffffff;
+        }
+
+        .profile-info p {
+        margin: 0;
+        font-size: 1.05rem;
+        color: #ffffff;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 30px; /* Rounded corners, not a full circle */
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            background-color: #73c1e0;
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+        .profile-pic {
+           transition: transform 0.4s ease;
+        }
+
+        .profile-pic:hover {
+           transform: scale(1.05);
+           box-shadow: 0 12px 25px rgba(57, 133, 191, 0.3);
+        }
 
 
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire area */
+            object-position:top; /* Ensures the image is centered */
+            display: flex;
+
+        }
+       
+        .profile-info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        @media (min-width: 600px) {
+          .profile-container {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+          }
+  
+          .profile-info {
+            flex: 1;
+            padding-left: 20px;
+            
+          }
+        }
+
+       .profile-container {
+          opacity: 0;
+          animation: fadeIn 1.2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
         /* Contact Section */
         .contact-content {
             text-align: center;
@@ -570,4 +684,46 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Modal container */
+        .modal 
+        {
+          display: none; /* Hidden by default */
+          position: fixed; /* Sit on top of the page */
+          z-index: 1000; /* High z-index */
+          padding-top: 60px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+           /* Black background with opacity */
+        }
+
+ /* Modal content (image) */
+        .modal-content {
+          margin: auto;
+          display: block;
+          max-width: 90%;
+          max-height: 80vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 8px;
+        }
+
+/* Close button */
+        .close-btn {
+          position: absolute;
+          top: 60px;
+          right: 290px;
+          color: #fff;
+          font-size: 20px;
+          font-weight: bold;
+          cursor: pointer;
+          user-select: none;
+          transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+          color: #e2dfdf;
+        }
+        
+
     
