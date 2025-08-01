@@ -2,13 +2,9 @@
 
 Welcome to my personal portfolio website! This website is a digital representation of my professional identity, showcasing my skills, projects, resume, and contact information. Built with modern web technologies, it serves as a hub where potential employers, collaborators, and friends can learn more about me and my work.
 
-🔗 **Live Site**: [Click here to explore my work](https://mamidimahesh-portfolio.netlify.app/)
-
----
-
 ## 📌 About Me
 
-I am **M Mahesh**, a final-year Computer Science and Engineering student with a strong interest in full-stack development, web technologies, and software engineering. I enjoy building real-world applications, solving technical challenges, and continuously learning new skills.
+I am **M Mahesh**, a Recent Graduate Computer Science and Engineering student with a strong interest in full-stack development, web technologies, and software engineering. I enjoy building real-world applications, solving technical challenges, and continuously learning new skills.
 
 This portfolio highlights:
 
