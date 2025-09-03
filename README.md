@@ -1,4 +1,4 @@
-# 🌟 M Mahesh – Personal Portfolio
+# 🌟 Mamidi Mahesh – Personal Portfolio
 
 Welcome to my personal portfolio website! This website is a digital representation of my professional identity, showcasing my skills, projects, resume, and contact information. Built with modern web technologies, it serves as a hub where potential employers, collaborators, and friends can learn more about me and my work.
 
